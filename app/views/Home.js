@@ -9,7 +9,7 @@ export class Home extends React.Component {
     render(){
         return(
             
-            <View style = {styles.container}>
+            <View style={styles.container}>
                 <Header message = " press to login"/>
                 <CharactersSlider></CharactersSlider>
             </View>
@@ -22,9 +22,8 @@ export class Home extends React.Component {
 
 const styles = StyleSheet.create({
     container : {
-        flex : 1,
-
-    },
+        flex : 10,
+    }
 
 
 
