@@ -8,22 +8,22 @@ export class CharactersSlider extends React.Component {
         super(props);
         this.state = {
             characters : [
-                {id: 0, name : "Beelzebub", url : "../../assets/wiki/Beelzebub.png"},
-                {id : 1, name : "Charlotta", url : "../../assets/wiki/Charlotta.png"},
-                {id : 2, name : "Djeeta", url : "../../assets/wiki/Djeeta.png"},
-                {id : 3, name : "Ferry", url : "../../assets/wiki/Ferry.png"},
-                {id : 4, name : "Gran", url : "../../assets/wiki/Gran.png"},
-                {id : 5, name : "Katalina", url : "../../assets/wiki/Katalina.png"},
-                {id : 6, name : "Ladiva", url : "../../assets/wiki/Ladiva.png"},
-                {id : 7, name : "Lancelot", url : "../../assets/wiki/Lancelot.png"},
-                {id : 8, name : "Lowain", url : "../../assets/wiki/Lowain.png"},
-                {id : 9, name : "Metera", url : "../../assets/wiki/Metera.png"},
-                {id : 10, name : "Narmaya", url : "../../assets/wiki/Narmaya.png"},
-                {id : 11, name : "Percival", url : "../../assets/wiki/Percival.png"},
-                {id : 12, name : "Soriz", url : "../../assets/wiki/Soriz.png"},
-                {id : 13, name : "Vaseraga", url : "../../assets/wiki/Vaseraga.png"},
-                {id : 14, name : "Zeta", url : "../../assets/wiki/Zeta.png"},
-                {id : 15, name : "Zooey", url : "../../assets/wiki/Zooey.png"}
+                {id: "0", name : "Beelzebub", url : "../../assets/wiki/Beelzebub.png"},
+                {id : "1", name : "Charlotta", url : "../../assets/wiki/Charlotta.png"},
+                {id : "2", name : "Djeeta", url : "../../assets/wiki/Djeeta.png"},
+                {id : "3", name : "Ferry", url : "../../assets/wiki/Ferry.png"},
+                {id : "4", name : "Gran", url : "../../assets/wiki/Gran.png"},
+                {id : "5", name : "Katalina", url : "../../assets/wiki/Katalina.png"},
+                {id : "6", name : "Ladiva", url : "../../assets/wiki/Ladiva.png"},
+                {id : "7", name : "Lancelot", url : "../../assets/wiki/Lancelot.png"},
+                {id : "8", name : "Lowain", url : "../../assets/wiki/Lowain.png"},
+                {id : "9", name : "Metera", url : "../../assets/wiki/Metera.png"},
+                {id : "10", name : "Narmaya", url : "../../assets/wiki/Narmaya.png"},
+                {id : "11", name : "Percival", url : "../../assets/wiki/Percival.png"},
+                {id : "12", name : "Soriz", url : "../../assets/wiki/Soriz.png"},
+                {id : "13", name : "Vaseraga", url : "../../assets/wiki/Vaseraga.png"},
+                {id : "14", name : "Zeta", url : "../../assets/wiki/Zeta.png"},
+                {id : "15", name : "Zooey", url : "../../assets/wiki/Zooey.png"}
                 
             ]
         };
@@ -34,14 +34,17 @@ export class CharactersSlider extends React.Component {
         
         return(
             <View style={styles.slider}>
-
-                <FlatList data={this.state.characters} extraData={this.state}
+                <FlatList horizontal={true} data={this.state.characters} extraData={this.state}
                 renderItem={({item}) =>(
+                    //<Image source={require({item.characters[0].url})}/>
+           
                     <Text> {item.name}</Text>
+                    <Text> {item.url}</Text>
                 )}
                 keyExtractor={item => item.id}
 
                 />
+
                 <TouchableOpacity onPress={this.onPress}>
                 </TouchableOpacity>  
             </View>
