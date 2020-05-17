@@ -36,23 +36,27 @@ export class CharactersSlider extends React.Component {
             <View style={styles.slider}>
                 <FlatList horizontal={true} data={this.state.characters} extraData={this.state}
                 renderItem={({item}) =>(
-                    //<Image source={require({item.characters[0].url})}/>
-           
-                    <Text> {item.name}</Text>
-                    <Text> {item.url}</Text>
+                    <View>
+                        <Text> {item.name}</Text>
+                        <Text> {item.url} </Text>
+                        
+                        
+                    </View>
                 )}
                 keyExtractor={item => item.id}
 
                 />
-
+                <Image source={require('../../assets/logo.png')}/>                 
                 <TouchableOpacity onPress={this.onPress}>
                 </TouchableOpacity>  
+ 
+
             </View>
         );
     }
 
 }
-//<Image source={require('../../assets/wiki/Zeta.png')}></Image>
+//<Image source={require('../../assets/wiki/Zeta.png')}/>
 
     
 const styles = StyleSheet.create({
